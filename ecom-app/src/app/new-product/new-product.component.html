@@ -1,0 +1,69 @@
+<div class="container mt-5 " >
+
+
+  <section class="section dashboard mx-auto">
+    <div class="row">
+
+      <!-- Left side columns -->
+      <div class="col-lg-8">
+        <div class="row">
+
+          <!-- Top Selling -->
+          <div class="col-12">
+            <div class="card top-selling overflow-auto">
+
+
+
+              <div class="card-body pb-0">
+                <h5 class="card-title">New Product</h5>
+                <div class="row">
+                  <div class="col-md-6">
+                    <!--  {{productForm.value | json}}-->
+                    <form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+                      <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input class="form-control" formControlName="nom">
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Price</label>
+                        <input class="form-control" formControlName="price">
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Quantity</label>
+                        <input  class="form-control" formControlName="quantity">
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Link Image</label>
+                        <input  class="form-control" formControlName="imageUrl">
+                      </div>
+                      <div class="mb-2">
+                        <button [disabled]="productForm.invalid"  class="btn btn-success">Add</button>
+
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+
+
+              </div>
+
+            </div>
+          </div><!-- End Top Selling -->
+
+
+
+
+        </div>
+      </div><!-- End Left side columns -->
+
+
+    </div>
+  </section>
+
+</div>
+
+
+
+
+

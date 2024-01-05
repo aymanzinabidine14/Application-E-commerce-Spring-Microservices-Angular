@@ -1,0 +1,50 @@
+<div class="container mt-5 " >
+  <section class="section dashboard mx-auto">
+    <div class="row">
+      <!-- Left side columns -->
+      <div class="col-lg-8">
+        <div class="row">
+          <!-- Top Selling -->
+          <div class="col-12">
+            <div class="card top-selling overflow-auto">
+              <div class="card-body pb-0">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h5 class="card-title">Users List</h5>
+                  <!-- Add your button here -->
+                </div>
+                <table class="table table-borderless" *ngIf="customers">
+                  <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Orders</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let c of customers">
+                    <td><a class="text-primary fw-bold">{{c.id}}</a></td>
+                    <td>{{c.nom}}</td>
+                    <td>
+
+                      <button (click)="getOrders(c)" class="btn btn-outline-success">
+                        <i class="bi bi-eye"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+</div>
+
+
+
+

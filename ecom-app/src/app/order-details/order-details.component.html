@@ -1,0 +1,51 @@
+<div class="container mt-5 " >
+  <section class="section dashboard mx-auto">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-12">
+            <div class="card top-selling overflow-auto">
+              <div class="card-body pb-0">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h5 class="card-title">Order ID: {{orderId}}</h5>
+                </div>
+                <table class="table table-borderless" *ngIf="ordersDetails">
+                  <thead>
+                  <tr>
+                    <th scope="col">Preview</th>
+                    <th>Id</th><th>name</th><th>Price</th><th>Quantite</th><th>Amount</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let pi of ordersDetails.productItems">
+                    <th scope="row">
+                      <img src={{pi.imageUrl}} alt="">
+                    </th>                    <td>{{pi.id}}</td>
+                    <td>{{pi.product.nom}}</td>
+                    <td>{{pi.price | number:'.2'}}</td>
+                    <td>{{pi.quantity}}</td>
+                    <td>{{pi.amount | number:'.2'}}</td>
+
+                  </tr>
+                  <tr class="table-success">
+                    <td colspan="5" class="text-end">Total</td>
+                    <td class="text-end">{{ordersDetails.total | number:'.2'}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+</div>
+
+
+
+
+
